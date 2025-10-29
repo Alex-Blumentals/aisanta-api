@@ -34,6 +34,15 @@ TAVUS_API_KEY = os.getenv("TAVUS_API_KEY")
 TAVUS_PERSONA_ID = os.getenv("TAVUS_PERSONA_ID")
 TAVUS_BASE_URL = "https://tavusapi.com/v2"
 
+# Debug: Print environment variable status on startup
+print("=" * 60)
+print("ENVIRONMENT VARIABLE DEBUG:")
+print(f"TAVUS_API_KEY present: {bool(TAVUS_API_KEY)}")
+print(f"TAVUS_API_KEY length: {len(TAVUS_API_KEY) if TAVUS_API_KEY else 0}")
+print(f"TAVUS_PERSONA_ID present: {bool(TAVUS_PERSONA_ID)}")
+print(f"TAVUS_PERSONA_ID length: {len(TAVUS_PERSONA_ID) if TAVUS_PERSONA_ID else 0}")
+print("=" * 60)
+
 # Load conversation arcs from YAML
 with open("conversation-arcs.yaml", "r") as f:
     CONVERSATION_ARCS = yaml.safe_load(f)
